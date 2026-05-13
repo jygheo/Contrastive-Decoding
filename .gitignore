@@ -1,0 +1,9 @@
+# Ignore Jupyter hidden folders
+.ipynb_checkpoints/
+
+# Ignore Mac OS hidden files (if applicable)
+.DS_Store
+
+# Ignore all raw files in the data folder EXCEPT the README
+data/*
+!data/README.md
