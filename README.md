@@ -9,6 +9,7 @@ This repository contains our reproduction and novel extension on the paper *Cont
 We aimed to reproduce the original baseline evaluations (Table 1) and model scaling behaviors (Figure 1) to validate CD's effectiveness and test the mechanistic hypothesis that a larger expert-amateur size gap produces a stronger contrastive signal. 
 
 <img width="677" height="283" alt="Screenshot 2026-05-12 at 9 27 05 PM" src="https://github.com/user-attachments/assets/8b0dc4d2-0f70-4f95-a214-75078e91413e" />  
+
 Table 1 [1]
 
 <img width="515" height="267" alt="Screenshot 2026-05-12 at 9 26 39 PM" src="https://github.com/user-attachments/assets/8d3d8bef-e0f1-4ac4-a17f-c9311ce003de" />   
