@@ -3,10 +3,17 @@
 **Authors:** Yoongyu Heo, Winnie Liu, Bradley Lasker, Timothy Nguyen
 
 ## 1. Introduction
-This repository contains our reproduction and novel extension on the paper *Contrastive Decoding: Open-ended Text Generation as Optimization* [1]. Contrastive Decoding (CD) is an inference-time method that improves generation quality by selecting tokens an "expert" model favors while penalizing tokens a smaller "amateur" model predicts.
+This repository contains our reproduction and novel extension on the paper *Contrastive Decoding: Open-ended Text Generation as Optimization* [1]. Contrastive Decoding (CD) is an inference-time method that improves generation quality by selecting tokens an "expert" model favors while penalizing tokens a smaller "amateur" model predicts. We extend this approach to the MusicGen architecture [2].
 
 ## 2. Chosen Result
 We aimed to reproduce the original baseline evaluations (Table 1) and model scaling behaviors (Figure 1) to validate CD's effectiveness and test the mechanistic hypothesis that a larger expert-amateur size gap produces a stronger contrastive signal. 
+<img width="677" height="283" alt="Screenshot 2026-05-12 at 9 27 05 PM" src="https://github.com/user-attachments/assets/8b0dc4d2-0f70-4f95-a214-75078e91413e" />  
+Table 1 [1]
+
+<img width="515" height="267" alt="Screenshot 2026-05-12 at 9 26 39 PM" src="https://github.com/user-attachments/assets/8d3d8bef-e0f1-4ac4-a17f-c9311ce003de" />   
+
+Figure 1 [1]
+
 
 ## 3. GitHub Contents
 * `code/`: Jupyter notebooks for text and music generation/evaluation.
