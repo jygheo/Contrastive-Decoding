@@ -23,7 +23,7 @@ Figure 1 [1]
 * `poster/`: Our academic poster from the in-class presentation.
 
 ## 4. Re-implementation Details
-We evaluated CD on text (GPT-2, OPT-6.7B, Qwen1.5-7B), validated its scaling properties (GPT-2 family) and extended it to audio using MusicGen. Due to architectural incompatibilities with MusicGen's EnCodec structure, we modified the decoding approach by replacing beam search with top-k sampling over the CD scores.
+We evaluated CD on text (GPT-2, OPT-6.7B, Qwen1.5-7B), validated its scaling properties (GPT-2 family) and extended it to audio using MusicGen. Due to architectural incompatibilities with MusicGen's EnCodec structure, we modified the decoding approach by replacing beam search with top-k sampling over the CD scores.  
 Text metrics: DIV, COH, MAUVE [1,3,4].  
 Audio metrics: PaSST KL, FAD, VGGish-MAUVE [5,6,4].
 
@@ -35,12 +35,22 @@ To re-implement our findings in a local environment:
 * **Resources Needed:** A GPU (T4, A100, or equivalent) is required to run inference on the expert models.
 
 ## 6. Results/Insights
-CD dominated text baselines across Coherence and Diversity, though we found metrics are highly sensitive to the amateur temperature hyperparameter. Furthermore, CD successfully transferred to audio generation; performance peaked when providing the amateur model with an "opposing-genre" prompt and applying CD exclusively to finer-detail codebooks (1-3).
+CD dominated text baselines across Coherence and Diversity (Table 2), and output quality increases as size gap between expert and amateur models increase (Figure 2), though we found metrics are highly sensitive to the amateur temperature hyperparameter. Furthermore, CD successfully transferred to audio generation; performance peaked when providing the amateur model with an "opposing-genre" prompt and applying CD exclusively to finer-detail codebooks (1-3).
 
-*(Note: See the `results/` folder for full metric tables and scaling heatmaps).*
+<img width="677" height="344" alt="Screenshot 2026-05-12 at 9 44 49 PM" src="https://github.com/user-attachments/assets/f095f4d7-a0f5-4bdc-86b9-3e974f4a70cf" />  
+
+Table 2    
+
+
+<img width="863" height="246" alt="Screenshot 2026-05-12 at 9 45 18 PM" src="https://github.com/user-attachments/assets/8e54855a-a2dd-4757-ba1b-0e628a10be67" />  
+
+Figure 2
+
+
+*(Note: See the `results/` folder for full results).*
 
 ## 7. Conclusion
-A single underspecified hyperparameter can drastically shift the behavioral space of an NLP method, highlighting a core reproducibility challenge. However, deliberately adversarial amateur prompting provides a strong, directional contrastive signal that successfully generalizes CD from text to audio generation.
+CD is consistently effective across architectures, from text to audio domains. Deliberately adversarial amateur prompting provides a strong, directional contrastive signal that successfully generalizes CD from text to audio generation.
 
 ## 8. References
 [1] Li, X. L., Holtzman, A., Fried, D., Liang, P., Weston, J., Zettlemoyer, L., Lewis, M., & Hajishirzi, H. (2022). Contrastive decoding: Open-ended text generation as optimization. *arXiv preprint arXiv:2210.15097*.
