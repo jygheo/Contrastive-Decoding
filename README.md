@@ -28,25 +28,6 @@ To re-implement our findings in a local environment:
 ## 6. Results/Insights
 CD dominated text baselines across Coherence and Diversity, though we found metrics are highly sensitive to the amateur temperature hyperparameter. Furthermore, CD successfully transferred to audio generation; performance peaked when providing the amateur model with an "opposing-genre" prompt and applying CD exclusively to finer-detail codebooks (1-3).
 
-### Audio Generation Highlights
-Notice how the CD samples utilizing "opposing-genre" amateur prompts suppress generic features and sharpen the target genre compared to the baselines.
-
-**Target Genre "Reggae"**
-* **Baseline (Top-k):** https://github.com/user-attachments/assets/17058084-73e0-48f1-b365-2c2423a93d90
-* **Contrastive Decoding (Amateur Prompt: "Classical"):** https://github.com/user-attachments/assets/bf79a0ba-1067-4df8-a858-3f858cb10ba5
-
-**Target Genre "Disco"**
-* **Baseline (Top-k):** https://github.com/user-attachments/assets/748b8e71-83ad-468a-a8dd-c967fe5527b1
-* **Contrastive Decoding (Amateur Prompt: "Funeral March"):** https://github.com/user-attachments/assets/4faee3cd-e35f-4f3a-bb9a-8f2442228d57
-
-**Target Genre "Metal"**
-* **Baseline (Top-k):** https://github.com/user-attachments/assets/0f0fa5ec-527b-4787-88e5-4d660cf35f28
-* **Contrastive Decoding (Amateur Prompt: "Smooth Jazz"):** https://github.com/user-attachments/assets/06eebf3e-68b2-4f87-a402-d5103e3ed054
-
-**Codebook Optimization**
-* **CD applied to Codebooks 1-3 only:** https://github.com/user-attachments/assets/76c596f3-0f4a-4f59-857a-5b530f500aa9
-  * *Note: Skipping Codebook 0 reduces the structural artifacts heard in standard generation.*
-
 *(Note: See the `results/` folder for full metric tables and scaling heatmaps).*
 
 ## 7. Conclusion
