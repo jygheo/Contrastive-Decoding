@@ -23,7 +23,9 @@ Figure 1 [1]
 * `poster/`: Our academic poster from the in-class presentation.
 
 ## 4. Re-implementation Details
-We evaluated CD on text (GPT-2, OPT-6.7B, Qwen1.5-7B) and extended it to audio using MusicGen. Due to architectural incompatibilities with MusicGen's EnCodec structure, we modified the decoding approach by replacing beam search with top-k sampling over the CD scores.
+We evaluated CD on text (GPT-2, OPT-6.7B, Qwen1.5-7B), validated its scaling properties (GPT-2 family) and extended it to audio using MusicGen. Due to architectural incompatibilities with MusicGen's EnCodec structure, we modified the decoding approach by replacing beam search with top-k sampling over the CD scores.
+Text metrics: DIV, COH, MAUVE [1,3,4].  
+Audio metrics: PaSST KL, FAD, VGGish-MAUVE [5,6,4].
 
 ## 5. Reproduction Steps
 To re-implement our findings in a local environment:
@@ -44,6 +46,15 @@ A single underspecified hyperparameter can drastically shift the behavioral spac
 [1] Li, X. L., Holtzman, A., Fried, D., Liang, P., Weston, J., Zettlemoyer, L., Lewis, M., & Hajishirzi, H. (2022). Contrastive decoding: Open-ended text generation as optimization. *arXiv preprint arXiv:2210.15097*.
 
 [2] Copet, J., Kreuk, F., Gat, I., Remez, T., Kant, D., Synnaeve, G., Adi, Y., & Défossez, A. (2023). Simple and controllable music generation. *arXiv preprint arXiv:2306.05284*.
+
+[3] Gao, T., Yao, X., & Chen, D. (2021). SimCSE: Simple contrastive learning of sentence embeddings [Source code]. GitHub. *https://github.com/princeton-nlp/SimCSE*.
+
+[4] Pillutla, K., Swayamdipta, S., Zellers, R., Thickstun, J., Welleck, S., Choi, Y., & Harchaoui, Z. (2021). MAUVE: Measuring the gap between neural text and human text using divergence frontiers. *arXiv preprint arXiv:2102.01454*.
+
+[5] Koutini, K., Schlüter, J., Eghbal-zadeh, H., & Widmer, G. (2021). Efficient training of audio transformers with patchout. *arXiv preprint arXiv:2110.05069*.
+
+[6] gudgud96. (2023). Frechet-audio-distance [Source code]. GitHub. *https://github.com/gudgud96/frechet-audio-distance*.
+
 
 ## 9. Acknowledgements
 This project was completed as part of the coursework for CS 4782 at Cornell University.
